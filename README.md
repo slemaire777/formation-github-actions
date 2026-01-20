@@ -13,17 +13,17 @@ Set up CI/CD pipeline for a C & python project
 ## Usefull commands
 
 ### C code (sysinfo)
-|             | action       |
+| Action      | Command      |
 |-------------|--------------|
 | compilation | `make build` |
 | lint        | `make lint`  |
 | execution   | `make run`   |
 
 ### Python script (mysystem)
-|                           | action                                                                           |
-|---------------------------|----------------------------------------------------------------------------------|
-| dependancies installation | `pip install ifaddr` <br/> `pip install psutil`                                  |
-| lint                      | `pip install pylint` <br/> `pylint --disable=missing-docstring script/mysystem`  |
-| execution                 | `python script/mysystem/mysystem.py`                                             |
-| tests                     | `pytest --junitxml=report.xml script/mysystem`                                   |
+| Action                    | Command                                                                         |
+|---------------------------|---------------------------------------------------------------------------------|
+| dependancies installation | `pip install ifaddr` <br/> `pip install psutil`                                 |
+| lint                      | `pip install pylint` <br/> `pylint --disable=missing-docstring script/mysystem` |
+| execution                 | `python script/mysystem/mysystem.py`                                            |
+| tests                     | `pytest --junitxml=report.xml script/mysystem`                                  |
 
