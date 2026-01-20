@@ -1,0 +1,7 @@
+site_name: Sysinfo Documentation
+theme:
+  name: readthedocs
+
+nav:
+  - Accueil: index.md
+  - À propos: about.md
