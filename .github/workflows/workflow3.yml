@@ -3,10 +3,20 @@ on: push
 
 jobs:
   build:
-    name: Make
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v6
       - name: run make
         run: make build
+
+  build-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install ifaddr psutil pylint
+      - run: pylint --disable=missing-docstring script/mysystem/mysystem.py
+
