@@ -1,0 +1,17 @@
+name: workflow
+
+on: push
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: info machine
+        run: hostnamectl
+      - name: ip
+        run: ip -4 a
+      - name: mon identité de connexion
+        run: whoami
+
+
