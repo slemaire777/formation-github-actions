@@ -24,6 +24,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+      - run: pip install ifaddr psutil
       - run: python script/mysystem/mysystem.py
 
   build-python:
