@@ -2,7 +2,14 @@ name: workflow3.yml
 on: push
 
 jobs:
-  build:
+  check-c:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: make lint
+
+  build-c:
+    needs: check-c
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -10,7 +17,14 @@ jobs:
       - name: run make
         run: make build
 
+  check-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: python script/mysystem/mysystem.py
+
   build-python:
+    needs: check-python
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
